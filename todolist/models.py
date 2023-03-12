@@ -5,7 +5,7 @@ class TodoModel(models.Model):
     name = models.CharField(max_length=40)
     description = models.CharField(max_length=400)
     is_done = models.BooleanField(default=False)
-    priority = models.IntegerField(default=3)
+    priority = models.IntegerField(default=2)
 
     def __str__(self) -> str:
         return self.name
