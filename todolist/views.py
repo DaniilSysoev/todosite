@@ -24,7 +24,7 @@ class TaskListAPIView(APIView):
     http_method_names = ('get', 'post')
 
     def get(self, request):
-        qs = models.TodoModel.objects.all()
+        qs = models.TodoModel.objects.all().order_by('priority')
         return Response(data=TaskSerializer(qs, many=True).data)
     
     def post(self, request):
